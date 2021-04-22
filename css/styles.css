@@ -1,0 +1,33 @@
+body {
+  text-align: center;
+  background-color: #A9BB7E;
+  color: #373A30;
+  user-select: none;
+}
+
+h1 {
+  margin: 100px 0 50px;
+}
+
+input {
+  width: 200px;
+  height: 20px;
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+}
+
+button {
+  height: 30px;
+  color: #373A30;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover {
+  background-color: #373A30;
+  color: #fff;
+}
