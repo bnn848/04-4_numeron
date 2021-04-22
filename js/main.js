@@ -18,6 +18,12 @@
     
     // 入力値を桁ごとに分解して配列として取得する
     const exp = document.getElementById('exp');
+    console.log(exp.value.length);
+    if (exp.value.length > 3) {
+      alert('３桁の数字を半角入力してください。')
+      return;
+    }
+
     const exp100 = Math.floor(exp.value / 100);
     const exp10 = Math.floor((exp.value - exp100 * 100) / 10);
     const exp1 = Math.floor(exp.value - exp100 * 100 - exp10 * 10);
@@ -25,8 +31,8 @@
     
     if (expNum[0] === expNum[1] || expNum[0] === expNum[2] || expNum[1] === expNum[2]) {
       return void
-      alert('３桁の重複しない数字を半角入力してください。'),
-      location.reload();
+      alert('３桁の重複しない数字を半角入力してください。');
+      // location.reload();
     }
     
     // 要素ごとに、ローラー作戦で照合する
@@ -57,6 +63,7 @@
     const text = document.getElementById('text');
     
     if (ec === 3) {
+      document.getElementById('answer').setAttribute('disabled', true);
       text.textContent = `${ec} EAT! Congratulations!`;
       
       const Btn = document.createElement('button');
@@ -88,7 +95,7 @@
     } else {
       checkUserNums();
       x++;
-      console.log(10 - x);
+      document.getElementById('brief').innerHTML = `３桁の数字を予想してください</br>あと残り${10 - x}回です`
     }
   });
 }
