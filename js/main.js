@@ -75,18 +75,20 @@
   
   // ページ読み込み時に発火する
   checkCpNums();
+  console.log(`cpNum = ${cpNum[0]}${cpNum[1]}${cpNum[2]}`);
   
   let x = 0;
   
   // clickイベントで発火する
   document.querySelector('button').addEventListener('click', () => {
     // 10回外したら終了
-    if (x >= 10) {
-      alert('あなたの負けです');
+    if (x > 8) {
+      alert(`正解は${cpNum[0]}${cpNum[1]}${cpNum[2]}でした。`);
       location.reload();
     } else {
       checkUserNums();
       x++;
+      console.log(10 - x);
     }
   });
 }
